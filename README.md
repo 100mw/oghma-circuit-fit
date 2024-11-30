@@ -8,12 +8,12 @@ Procedure for running manual fits
 3. On the windows virtual machine, monitor_commands.ps1 must be running in the master directory where the OghmaNano simulation files are located. 
 4. Then run setparams_vm.py to write the values to OghmaNano and update the plot of the log-log j-v curve and slope.
 
-Configuring scripts
+# Configuring scripts
 
 Before running the scripts, the directory and list of devices must be edited in VS Code.
 
-Syntax
+# Syntax
 
-python jvslope.py <device number>
+python3 jvslope.py {device number}
 
-where <device number> is set in the list of devices at the beginning of the script.
+where {device number} is set in the list of devices at the beginning of the script.
