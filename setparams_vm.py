@@ -253,10 +253,10 @@ Run oghma on device with new values
 '''
 
 # run oghma and wait
-runoghma = subprocess.run(['python3', 'oghma_core_vm.py', f'{device}'], text=True)
+runoghma = subprocess.run(['python', 'oghma_core_vm.py', f'{device}'], text=True)
 print()
 print('oghma complete')
 print()
 
 # run "Oghma circuit ouput" to plot the device jv and save the parameters
-runplot = subprocess.run(['python3', 'jvslope.py', f'{device}'], text=True)
+runplot = subprocess.run(['python', 'jvslope.py', f'{device}'], text=True)
