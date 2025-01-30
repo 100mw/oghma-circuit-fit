@@ -14,7 +14,7 @@ model_version = 'Model V21-9'
 # Type path to folder here (Mac/Windows/Unix compatible):
 #sim_folder_directory = "/Users/alexiarango/Library/CloudStorage/OneDrive-Personal/Documents/Oghma/Circuit/v21-4"
 #sim_folder_directory = "C:\\Users\\acara\\OneDrive\\Documents\\Oghma\\Circuit\\v21-9"
-sim_folder_directory = "/Users/alexiarango/Documents/Oghma/demo"
+sim_folder_directory = "/Users/alexiarango/Documents/Oghma/v21-9"
 
 # select device from dictionary with argument when the script is run in the terminal
 
@@ -144,7 +144,7 @@ Open raw jv data and fit data file, create numpy arrays
 sim_folder_path = Path(sim_folder_directory) / device_dict[device]
 
 # open fit_data file containing raw data
-data_raw = pd.read_csv(sim_folder_path / "fit_data0.inp", sep="\t", skiprows=1, header=None)
+data_raw = pd.read_csv(sim_folder_path / "fit_data0.inp", sep=r"\s+", comment="#", header=None)
 data_raw = data_raw.loc[(data_raw!=0).any(axis=1)]
 
 # create numpy arrays from raw data
@@ -157,7 +157,7 @@ if v_data[0] < 1e-10:
   j_data = np.delete(j_data, [0])
 
 # open file containing fit data
-fit = pd.read_csv(sim_folder_path / 'sim' / fit_name / "jv.best", sep="\t", skiprows=2, header=None)
+fit = pd.read_csv(sim_folder_path / 'sim' / fit_name / "jv.best", sep=r"\s+", comment="#", header=None)
 fit = fit.loc[(fit!=0).any(axis=1)]
 
 # create numpy arrays from fit data
@@ -165,7 +165,7 @@ v_fit = fit[fit.columns[0]].to_numpy()
 j_fit = fit[fit.columns[1]].to_numpy()
 
 # open file containing error data
-error = pd.read_csv(sim_folder_path / 'sim' / fit_name / "fit_error_delta.csv", sep="\t", skiprows=2, header=None)
+error = pd.read_csv(sim_folder_path / 'sim' / fit_name / "fit_error_delta.csv", sep=r"\s+", comment="#", header=None)
 error = error.loc[(error!=0).any(axis=1)]
 
 # create numpy arrays from fit data
@@ -752,5 +752,3 @@ if save == True:
   # save to results folder
   circuit_legs_df.to_csv(filename, sep='\t', index=False)
 
-plt.ioff()
-plt.show()
