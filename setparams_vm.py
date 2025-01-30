@@ -11,7 +11,7 @@ model_version = 'Model V21-9'
 
 # Type path to folder here (Mac/Windows/Unix compatible):
 #sim_folder_directory = "/Users/alexiarango/Library/CloudStorage/OneDrive-Personal/Documents/Oghma/Circuit/v21-4"
-sim_folder_directory = "/Users/alexiarango/Documents/Oghma/demo"
+sim_folder_directory = "/Users/alexiarango/Documents/Oghma/v21-9"
 
 # select device from dictionary
 device = 7

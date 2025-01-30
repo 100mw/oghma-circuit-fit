@@ -6,7 +6,7 @@ import time
 
 # Type path to folder here (Mac/Windows/Unix compatible):
 #sim_folder_directory = "C:\\Users\\acara\\OneDrive\\Documents\\Oghma\\Circuit\\demo"
-sim_folder_directory = "/Users/alexiarango/Documents/Oghma/demo"
+sim_folder_directory = "/Users/alexiarango/Documents/Oghma/v21-9"
 
 
 # select device from dictionary if running from vscode
