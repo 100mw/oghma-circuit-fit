@@ -146,7 +146,7 @@ Add fit and data to jv plot
 '''
 
 # open file containing error data
-error = pd.read_csv(sim_folder_path / 'sim' / fit_name / "fit_error_delta.csv", sep="\t", skiprows=2, header=None)
+error = pd.read_csv(sim_folder_path / 'sim' / fit_name / "fit_error_delta.csv", sep=r"\s+", skiprows=2, header=None)
 error = error.loc[(error!=0).any(axis=1)]
 
 # create numpy arrays from fit data
@@ -201,7 +201,7 @@ resultsfolder_path.mkdir(parents=True, exist_ok=True)
 
 
 # Save figure
-plt.savefig(resultsfolder_path / f'{device}_jv.pdf')
+plt.savefig(resultsfolder_path / f'{device}_jv.png')
 
   
 
